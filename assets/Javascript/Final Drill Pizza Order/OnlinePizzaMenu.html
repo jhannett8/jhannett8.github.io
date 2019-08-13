@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Pizza Time! </title>
+		<META CONTENT="text/html; charset=UTF-8">
+		<meta content="width=device-width,initial-scale=1.0" name="viewport">
+		<link rel="stylesheet" href="OnlinePizzaMenu.css">
+	</head>
+	<body>
+		<div id="menuBG">
+            <h1>Pizza Menu</h1>
+            <input id="btnOrder" type="button" onclick="getReceipt()" value="Place Order">
+			<form id="frmMenu">
+				<div class="menu">
+					<h3>Size:</h3>
+                        <!----Radio Buttons---->
+                        <!-----Size Selection-->
+                        <input class="Size" type="radio" name="Size" value="Personal"> Personal<br>
+                        <input class="Size" type="radio" name="Size" value="Medium"> Medium<br>
+                        <input class="Size" type="radio" name="Size" value="Large"> Large<br>
+                        <input class="Size" type="radio" name="Size" value="ELarge"> Extra Large<br>
+					<h3>Meat Toppings:</h3>
+                        <!----Creating Check Boxes-->
+                        <!----Addtional Meat toppings--->
+                        <input class="topping" type="checkbox" name="topping" value="Pepperoni"> Pepperoni<br>
+                        <input class="topping" type="checkbox" name="topping" value="Sausage"> Sausage<br>
+                        <input class="topping" type="checkbox" name="topping" value="Bacon"> Canadian Bacon<br>
+                        <input class="topping" type="checkbox" name="topping" value="Ground"> Ground Beef<br>
+                        <input class="topping" type="checkbox" name="topping" value="Anchovy"> Anchovy<br>
+                        <input class="topping" type="checkbox" name="topping" value="Chicken"> Chicken<br>
+                    <h3>Cheese:</h3>
+                        <!----Radio Buttons---->
+                        <!-----Cheese Selection-->
+                        <input class="Cheese" type="radio" name="Cheese" value="Regular"> Regular<br>
+                        <input class="Cheese" type="radio" name="Cheese" value="None"> No Cheese<br>
+                        <input class="Cheese" type="radio" name="Cheese" value="Extra Cheese"> Extra Cheese<br>
+                    <h3>Crust:</h3>
+                        <!----Radio Buttons---->
+                        <!-----Crust Selection-->
+                        <input class="Crust" type="radio" name="Crust" value="Plain"> Plain Crust<br>
+                        <input class="Crust" type="radio" name="Crust" value="Garlic"> Garlic Butter Crust<br>
+                        <input class="Crust" type="radio" name="Crust" value="Cheese"> Cheese Stuffed Crust<br>
+                        <input class="Crust" type="radio" name="Crust" value="Spicy"> Spicy Crust<br>
+                        <input class="Crust" type="radio" name="Crust" value="House"> House Special Crust<br>
+                    <h3>Sauce:</h3>
+                        <!----Radio Buttons---->
+                        <!-----Sauce Selection-->
+                        <input class="Sauce" type="radio" name="Sauce" value="Marinara">Marinara Sauce<br>
+                        <input class="Sauce" type="radio" name="Sauce" value="White"> White Sauce<br>
+                        <input class="Sauce" type="radio" name="Sauce" value="Barbeque"> Barbeque Sauce<br>
+                        <input class="Sauce" type="radio" name="Sauce" value="None"> No Sauce<br>
+                    <h3>Veggie Toppings:</h3>
+                        <!----Creating Check Boxes-->
+                        <!----Addtional Veggie toppings--->
+                        <input class="vtopping" type="checkbox" name="vtopping" value="Tomatoe"> Tomatoe<br>
+                        <input class="vtopping" type="checkbox" name="vtopping" value="Onion"> Onion<br>
+                        <input class="vtopping" type="checkbox" name="vtopping" value="Olive" > Olive<br>
+                        <input class="vtopping" type="checkbox" name="vtopping" value="Green Pepper"> Green Peppers<br>
+                        <input class="vtopping" type="checkbox" name="vtopping" value="Mushroom"> Mushrooms<br>
+                        <input class="vtopping" type="checkbox" name="vtopping" value="Pinapple"> Pineapple<br>
+                        <input class="vtopping" type="checkbox" name="vtopping" value="Spinach"> Spinach<br>
+                        <input class="vtopping" type="checkbox" name="vtopping" value="Jalapeno"> Jalapeno<br>
+                </div>
+				<div id="cart">
+					<div id="showText"></div>
+					<div id="totalPrice"></div>
+				</div>
+            </form>
+		</div>
+		<script src="OnlinePizzaMenu.js"></script>
+	</body>
+</html>
+		
+

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>HTML & CSS Basics Course</title>
+		<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+		<meta content="width=device-width,initial-scale=1.0" name="viewport">
+        <link rel="stylesheet" href="./css/game.css">
+		<style></style>
+	</head>
+	<body id="body">
+		
+		
+		<!---------------------------Audio Links ------------------------------------->
+		<!--------Different sound effects for avatar placement, win/Tie/DiceRoll------>
+		<audio id="placeAvatar"> <!----Avatar=Xs and Os-->
+			<source src="./audio/placeAvatar.mp3" type="audio/mpeg">
+			Your browser does not support the audio element.
+		</audio>
+		<audio id="winGame">
+			<source src="./audio/winGame.mp3" type="audio/mpeg">
+			Your browser does not support the audio element.
+		</audio>
+		<audio id="tieGame">
+			<source src="./audio/tieGame.mp3" type="audio/mpeg">
+			Your browser does not support the audio element.
+		</audio>
+		<audio id="diceRoll">
+			<source src="./audio/diceRoll.mp3" type="audio/mpeg">
+			Your browser does not support the audio element.
+		</audio>
+		<!------------------------------/Audio Links --------------------------->
+		
+		
+		
+		
+		<!--------------------Shell is entire page including all contenys------->
+		<div id="shell">
+
+			<!----------------------Boc pop Up --------------------------------->
+			<div id="gameMsgBox" onclick="hideGameMsg()"><p id="gameMsg"></p></div>
+			<!------------------------this creates calls the function Hidden Game Message when clicked-->
+			
+			<!---------The left postion of the console------->
+			<div class="console_Left">
+				<div class="displayBox boxLeft">
+					<!---Addition of two class names-->
+					<Strong>Current Config:</strong><br><br>
+					<label>Player 1: &nbsp&nbsp<span id="p1Display">O</span></label><br>
+					<!----The <label> element does not render as anything special for the user. 
+						However, it provides a usability improvement for mouse users, because 
+						if the user clicks on the text within the <label> element, it toggles the control.-->
+					<label>Player 2: &nbsp&nbsp<span id="p2Display">X</span></label>
+				</div>
+				<div class=""><button id="btnStart" onclick="startGame()">Start Game</button></div>
+				<div id="boardState"></div>
+				<div id="controls">
+					<!-----Want to let player now who the active player is, or if the game is stopped-->
+					<div id="messageFrame">
+						<p id="showHeader">ACTIVE PLAYER:</p>
+						<p id="showPlayer">Game Stopped</p>
+					</div>
+				</div>
+			</div>
+			<!----------/Left Portion of the console ------->
+			
+			
+			<!--------------Table portion/Middle Portion of the console-->
+			<table>
+				<!----Square One (Another option is a CSS flexbox for more complex options)-->
+				<!---In our code we are going to treat this as an array of squares-->
+				<!---By doing so we know which square the user clicks on-->
+				<tr>
+					<td>
+						<div class="photo-container"> <!---contains the photos, X and O (avatars)-->
+							<div id="square0" class="square" onclick="square1Animate()">
+							  <div class="O"></div>
+							  <div class="X"></div>
+							  <!----when not used, we dont want to see these avatars-->
+							  <!----Set overflow to none, starting state: Avatar is out of view-->
+							</div>
+						</div>
+					</td>
+					<!----------/Square one------------>
+					<td>
+						<div class="photo-container">
+							<div id="square1" class="square" onclick="square2Animate()" ondblclick="">
+							  <div class="O"></div>
+							  <div class="X"></div>
+							</div>
+						</div>
+					</td>
+					<td>
+						<div class="photo-container">
+							<div id="square2" class="square" onclick="square3Animate()">
+							  <div class="O"></div>
+							  <div class="X"></div>
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<div class="photo-container">
+							<div id="square3" class="square" onclick="square4Animate()">
+							  <div class="O"></div>
+							  <div class="X"></div>
+							</div>
+						</div>
+					</td>
+					<td>
+						<div class="photo-container">
+							<div id="square4" class="square" onclick="square5Animate()">
+							  <div class="O"></div>
+							  <div class="X"></div>
+							</div>
+						</div>
+					</td>
+					<td>
+						<div class="photo-container">
+							<div id="square5" class="square" onclick="square6Animate()">
+							  <div class="O"></div>
+							  <div class="X"></div>
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<div class="photo-container">
+							<div id="square6" class="square" onclick="square7Animate()">
+							  <div class="O"></div>
+							  <div class="X"></div>
+							</div>
+						</div>
+					</td>
+					<td>
+						<div class="photo-container">
+							<div id="square7" class="square" onclick="square8Animate()">
+							  <div class="O"></div>
+							  <div class="X"></div>
+							</div>
+						</div>
+					</td>
+					<td>
+						<div class="photo-container">
+							<div id="square8"  class="square" onclick="square9Animate()">
+							  <div class="O"></div>
+							  <div class="X"></div>
+							</div>
+						</div>
+					</td>
+				</tr>
+			</table>
+			<!--------------------/Table Portion of console------------>
+
+			<!--------------------------Console Right ----------------->
+			<div class="console_Right" style="float:right;">
+				<div class="displayBox boxRight">
+					<Strong>Configuration:</strong><br><br>
+					<!----Allows for players to chose thier own avatar of X, and O, but both cant be assigned the same Avatar-->
+					<label>Player 1: </label><select id="player1"><option value="X">X</option><option value="O">O</option></select><br>
+					<label>Player 2: </label><select id="player2"><option value="X">X</option><option value="O">O</option></select>
+					<button onclick="saveSettings()">Save Config</button>
+					<!---Saves Changes------>
+				</div>
+				<div id="controls">
+					<button id="btnStop" onclick="stopGame()">Stop Game</button>
+				</div>
+			</div>
+		</div>
+		<!-------------------------/Console Right------------------------>
+		<!------------------------/shell--------------------------------->
+		
+		<!--------------------------Javascript-------------------------->
+		<script>
+			//All nine squares will have an O and an X image 
+			//Every square has the option of showing an X or an O 
+			var arrayO = document.getElementsByClassName("O");
+			var arrayX = document.getElementsByClassName("X");
+			
+			//Avatars will either be trasnlating up or down
+			//But will start out of view 
+			//Basic iteration technique: go through array and apply trasnlation (css)
+			for (var i=0; i<arrayO.length;i++) {
+				arrayO[i].style.transform = "translateY(-100%)";
+				// this initializes all avatar graphics to not be visible as translateY(0%) would make them appear
+				// O avatar will trasnlate up
+			}
+			for (var i=0; i<arrayX.length;i++) {
+				arrayX[i].style.transform = "translateY(100%)";
+				//X avatar will trasnlate down 
+			}
+		</script>
+		
+		<script src="./js/tictactoe.js"></script>
+		
+
+	</body>
+</html>
