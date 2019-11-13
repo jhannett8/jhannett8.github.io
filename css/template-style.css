@@ -100,10 +100,7 @@ a:hover {
 }
 
 
-/*
-    Navbar Section
-
-*/
+/*Navbar Section*/
 .Navbar {
     padding: 10px 10px -5px 10px;
     overflow: hidden;
@@ -138,8 +135,14 @@ a:hover {
     /* Navbar home button */
     .Navbar a.active {
         color: green;
-        font: italics;
+        font-style: italics;
     }
+/*remove portion of navbar on mobile*/
+@media (max-width: 768px){
+  div#main-nav {
+    display: none;
+}
+}
 
 /*
   Welcome section
@@ -510,7 +513,6 @@ highlight {
 /* Add an italic font style to all quotes */
 q {
     font-style: italic;
-    /*color: black;*/
+    color: black;
 }
 
-/* Add a blue color to the author */
